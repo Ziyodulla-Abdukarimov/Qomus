@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+{{ user }}
+<p style="font-size:20px">Savol: {{ quiz.question }}</p>
+<form method="post">
+    {% csrf_token %}
+    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+    <input name="number" type="hidden" value="1">
+    <button type="submit">A: {{ quiz.answer1 }}</button>
+</form>
+<form method="post">
+    {% csrf_token %}
+    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+    <input name="number" type="hidden" value="2">
+    <button type="submit">B: {{ quiz.answer2 }}</button>
+</form>
+<form method="post">
+    {% csrf_token %}
+    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+    <input name="number" type="hidden" value="3">
+    <button type="submit">C: {{ quiz.answer3 }}</button>
+</form>
+<form method="post">
+    {% csrf_token %}
+    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+    <input name="number" type="hidden" value="4">
+    <button type="submit">D: {{ quiz.answer4 }}</button>
+</form>
+
+<p style="font-size:20px">question_range: {{ quiz.question_range }}</p>
+</body>
+</html>

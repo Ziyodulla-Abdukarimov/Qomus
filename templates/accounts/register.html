@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ro'yhatdan o'tish</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input name="username" type="text" placeholder="Username">
+    <input name="password1" type="password" placeholder="Parol">
+    <input name="password2" type="password" placeholder="Parolni qayta kiriting">
+    <button>Ro'yhatdan o'tish</button>
+</form>
+</body>
+</html>
