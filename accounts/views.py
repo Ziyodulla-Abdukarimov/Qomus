@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from accounts.models import CustomUser
 from django.contrib.auth import authenticate, login as authlogin, logout
 
@@ -18,6 +18,9 @@ def login(request):
     login = request.POST.get('username')
     password = request.POST.get('password')
     user = authenticate(username=login, password=password)
-    authlogin(request, user)
+    if request.method == 'POST':
+        authlogin(request, user)
+        if request.user.is_authenticated:
+            return redirect('base')
 
     return render(request, 'accounts/login.html')

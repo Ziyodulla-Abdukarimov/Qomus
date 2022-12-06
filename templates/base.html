@@ -1,12 +1,116 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Qomus</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BOOTSTRAP CSS-->
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+    <!--/BOOTSTRAP CSS-->
+
+    <!--Share CSS-->
+    <link rel="stylesheet" href="{% static 'share.css' %}">
+    <!--/Share CSS-->
+
+    <!-- MAIN CSS-->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <!--/MAIN CSS-->
+
+    <!--Loader css-->
+    <link rel="stylesheet" href="{% static 'loader.css' %}">
+    <link rel="stylesheet" href="{% static 'loader-ajax.css' %}">
+    <!--/Loader css-->
+
+    <!--Fontawesomni ulash-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Fontawesomni ulash-->
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./images/flag_Uzbekistan.png" type="image/x-icon">
+    <!--/Favicon-->
+
+    <title>Asosiy</title>
 </head>
+
 <body>
-<a href="{% url 'quiz' %}">
-    TEST
-</a>
+    <!--Menu-->
+    <div class="main-menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'base' %}">
+                    <img src="{% static 'images/UZBEKISTAN_gerb.png' %}" class="logo" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex">
+                    <a class="btn btn-outline-success me-2" type="submit" href="{% url 'login' %}">Kirish</a>
+                    <a class="btn btn-outline-primary" type="submit" href="{% url 'register' %}">Ro'yxatdan o'tish</a>
+                </div>
+                <!-- <div class="d-flex">
+                    <div class="user mt-3 me-1">
+                        <div class="profile icon"></div>
+                    </div>
+                    <div class="user-name mt-1 me-3">
+                        Ziyodulla Abdukarimov
+                    </div>
+                    <button class="btn btn-outline-danger" type="submit">Chiqish</button>
+                </div>  -->
+            </div>
+        </nav>
+    </div>
+    <!--/Menu-->
+    <!--Main-->
+
+    <div class="row1-container">
+        <a class="box box-down cyan" href="{% url 'quiz' %}">
+            <h2>Test ishlash</h2>
+            <p>Huquqiy bilimingizni tekshiring</p>
+            <img src="{% static './images/test-svgrepo-com.svg' %}" style="width: 65px;height:65px" alt="">
+        </a>
+
+        <a class="box red" href="{% static 'file/uploads_constitution_oz.pdf' %}" download="">
+            <h2>Konstitutsiya</h2>
+            <p>Konstitutsiya kitobini yuklab olish</p>
+            <img src="{% static './images/book-svgrepo-com.svg' %}" style="width: 65px;height:65px" alt="">
+        </a>
+
+        <a class="box box-down blue" href="">
+            <h2>Natijalar</h2>
+            <p>Ishtirokchilar natijasini kuzatib boring</p>
+            <img src="{% static './images/list-number-svgrepo-com.svg' %}" style="width: 65px;height:65px" alt="">
+        </a>
+    </div>
+    <div class="row2-container">
+        <a class="box orange" href="{% url 'team' %}">
+            <h2>Dastur haqida</h2>
+            <p>Dastur tuzuvchilari haqida qisqacha ma'lumot</p>
+            <img src="{% static './images/programmer-svgrepo-com.svg' %}" style="width: 65px;height:65px" alt="">
+        </a>
+    </div>
+    <!--/Main-->
+
+<!--Loader-->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+    <!-- jQuery Plugin -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Preloader -->
+    <script type="text/javascript">
+        $(window).on('load', function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        })
+    </script>
+<!--Loader-->
 </body>
-</html>

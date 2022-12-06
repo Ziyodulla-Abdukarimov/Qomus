@@ -1,37 +1,200 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Quiz</title>
-</head>
-<body>
-{{ user }}
-<p style="font-size:20px">Savol: {{ quiz.question }}</p>
-<form method="post">
-    {% csrf_token %}
-    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
-    <input name="number" type="hidden" value="1">
-    <button type="submit">A: {{ quiz.answer1 }}</button>
-</form>
-<form method="post">
-    {% csrf_token %}
-    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
-    <input name="number" type="hidden" value="2">
-    <button type="submit">B: {{ quiz.answer2 }}</button>
-</form>
-<form method="post">
-    {% csrf_token %}
-    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
-    <input name="number" type="hidden" value="3">
-    <button type="submit">C: {{ quiz.answer3 }}</button>
-</form>
-<form method="post">
-    {% csrf_token %}
-    <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
-    <input name="number" type="hidden" value="4">
-    <button type="submit">D: {{ quiz.answer4 }}</button>
-</form>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BOOTSTRAP CSS-->
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+    <!--/BOOTSTRAP CSS-->
 
-<p style="font-size:20px">question_range: {{ quiz.question_range }}</p>
+    <!--Share CSS-->
+    <link rel="stylesheet" href="{% static './share.css' %}">
+    <!--/Share CSS-->
+
+    <!-- MAIN CSS-->
+    <link rel="stylesheet" href="{% static './test.css' %}">
+    <!--/MAIN CSS-->
+
+
+    <!--Fontawesomni ulash-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Fontawesomni ulash-->
+    <title>Test ishlash</title>
+</head>
+
+<body>
+    <!--Menu-->
+    <div class="main-menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid mt-3">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static './images/UZBEKISTAN_gerb.png' %}" class="logo" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex">
+                    <div class="user mt-3 me-1">
+                        <div class="profile icon"></div>
+                    </div>
+                    <div class="user-name mt-1 me-3">
+                        Ziyodulla Abdukarimov
+                    </div>
+                    <button class="btn btn-outline-danger" type="submit">Testni yakunlash</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--/Menu-->
+
+    <!--Main-->
+    <div class="container">
+        <div class="row">
+            <div class="col-8 mt-5">
+                <div class="card card-border">
+                    <div class="card-body text-center card-words border-0">
+                        {{ quiz.question }}
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+                            <input name="number" type="hidden" value="1">
+                            <button type="submit" class="btn question-button">
+                                {{ quiz.answer1 }}
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+                            <input name="number" type="hidden" value="2">
+                            <button type="submit" class="btn question-button">
+                                {{ quiz.answer2 }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+                            <input name="number" type="hidden" value="3">
+                            <button type="submit" class="btn question-button">
+                                {{ quiz.answer3 }}
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input name="quiz_number" type="hidden" value="{{ quiz.id }}">
+                            <input name="number" type="hidden" value="4">
+                            <button type="submit" class="btn question-button">
+                                {{ quiz.answer4 }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card second-card-border">
+                            <div class="card-body second-card rounded-4">
+                                {% if user == 10 %}
+                                <p class="point first-point mt-2">1000</p>
+                                {% else %}
+                                <p class="point mt-2">1000</p>
+                                {% endif %}
+                               {% if user == 9 %}
+                                    <p class="point first-point mt-2">900</p>
+                                {% else %}
+                                    <p class="point mt-2">900</p>
+                                {% endif %}
+                               {% if user == 8 %}
+                                    <p class="point first-point mt-2">800</p>
+                                {% else %}
+                                    <p class="point mt-2">800</p>
+                                {% endif %}
+                               {% if user == 7 %}
+                                    <p class="point first-point mt-2">700</p>
+                                {% else %}
+                                    <p class="point mt-2">700</p>
+                                {% endif %}
+                               {% if user == 6 %}
+                                    <p class="point first-point mt-2">600</p>
+                                {% else %}
+                                    <p class="point mt-2">600</p>
+                                {% endif %}
+                               {% if user == 5 %}
+                                    <p class="point first-point mt-2">500</p>
+                                {% else %}
+                                    <p class="point mt-2">500</p>
+                                {% endif %}
+                               {% if user == 4 %}
+                                    <p class="point first-point mt-2">400</p>
+                                {% else %}
+                                    <p class="point mt-2">400</p>
+                                {% endif %}
+                               {% if user == 3 %}
+                                    <p class="point first-point mt-2">300</p>
+                                {% else %}
+                                    <p class="point mt-2">300</p>
+                                {% endif %}
+                                {% if user == 2 %}
+                                    <p class="point first-point mt-2">200</p>
+                                {% else %}
+                                    <p class="point mt-2">200</p>
+                                {% endif %}
+                                {% if user == 1 %}
+                                    <p class="point first-point mt-2">100</p>
+                                {% else %}
+                                    <p class="point mt-2">100</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/Main-->
+
+    <!--Loader-->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+    <!-- jQuery Plugin -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Preloader -->
+    <script type="text/javascript">
+        $(window).on('load', function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        })
+    </script>
+<!--Loader-->
+
+    <!--BOOTSTRAP JS-->
+    <script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <!--/BOOTSTRAP JS-->
 </body>
+
 </html>

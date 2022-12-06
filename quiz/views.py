@@ -67,3 +67,7 @@ def upload(request):
             )
             value.save()
     return render(request, 'upload.html')
+
+
+def team(request):
+    return render(request, 'team.html')
