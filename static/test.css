@@ -1,0 +1,59 @@
+body{
+    font-family:'Anonymous Pro';
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/*Main*/
+.card-words{
+    color: #000000;
+}
+.question-button{
+    width: 358px;
+    height: 80px;
+    padding: 7px;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(180deg, #1F78CA 19.43%, rgba(205, 68, 200, 0.84) 83.85%, rgba(221, 5, 225, 0.85) 100%) border-box;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+}
+.question-button:hover{
+    border:-2px solid transparent;
+    border-color:#1286F1;
+    color: rgba(255, 255, 255, 0.85);
+	box-shadow:rgb(117, 121, 255) 0 0px 0px 500px inset;
+}
+.card-border{
+background: linear-gradient(white, white) padding-box,
+linear-gradient(180deg, rgba(0,2,106,1) 10%, rgba(9,24,121,1) 36%, rgba(255,0,164,1) 100%) border-box;
+border-radius: 30px;
+border: 2px solid transparent;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.second-card{
+background: linear-gradient(180deg, rgba(0,2,106,1) 10%, rgba(9,24,121,1) 36%, rgba(255,0,164,1) 100%) border-box;
+}
+.second-card-border{
+background: linear-gradient(white, white) padding-box,#fff border-box;
+border: 1px solid transparent;
+}
+.first-point{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    background-color: #48FF07;
+}
+.point{
+    color: #fff;
+    text-align: center;
+} 

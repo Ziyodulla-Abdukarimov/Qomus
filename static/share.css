@@ -1,0 +1,50 @@
+/*Navbar*/
+.navbar{
+    background-color: none;
+}
+.navbar-brand{
+    margin-left: 89px;
+    margin-right: 250px;
+}
+.nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.logo{
+    margin-left: -35px;
+    width: 60px;
+    height: 60px;
+}
+.profile.icon {
+    float: right;
+    color: blue;
+    position: relative;
+    margin-left: 3px;
+    margin-top: 11px;
+    width: 14px;
+    height: 6px;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-top: solid 1px currentColor;
+    border-bottom: solid 1px transparent;
+    border-radius: 6px 6px 0 0;
+    transform: scale(2);
+  }
+  
+  .profile.icon:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: solid 1px currentColor;
+}
+.user-name{
+    font-size: 20px;
+    color: #333;
+    margin-left: 15px;
+    margin-top: -4px;
+}
