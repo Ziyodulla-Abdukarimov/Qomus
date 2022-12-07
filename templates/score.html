@@ -1,14 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Score</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Natijalar</title>
+    <link rel="stylesheet" href="{% static 'share.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/flag_Uzbekistan.png' %}" type="image/x-icon">
 </head>
 <body>
-{% for i in score %}
-<p>User: {{ i.user }}</p>
-<p>Rank: {{ i.res_rank }}</p>
-<p>Date: {{ i.date1 }}</p>
-{% endfor %}
+
+    <div class="main-menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'base' %}">
+                    <img src="{% static 'images/UZBEKISTAN_gerb.png' %}" class="logo" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex">
+                    <a class="btn btn-outline-success me-2" type="submit" href="{% url 'login' %}">Kirish</a>
+                    <a class="btn btn-outline-primary" type="submit" href="{% url 'register' %}">Ro'yxatdan o'tish</a>
+                </div>
+                <!-- <div class="d-flex">
+                    <div class="user mt-3 me-1">
+                        <div class="profile icon"></div>
+                    </div>
+                    <div class="user-name mt-1 me-3">
+                        Ziyodulla Abdukarimov
+                    </div>
+                    <button class="btn btn-outline-danger" type="submit">Chiqish</button>
+                </div>  -->
+            </div>
+        </nav>
+    </div>
+
+<div class="container">
+  <table class="table table-hover mt-5">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Username</th>
+      <th scope="col">Date</th>
+      <th scope="col">Daraja</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for i in score %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ i.user }}</td>
+      <td>{{ i.date1 }}</td>
+      <td>{{ i.res_rank }}</td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </body>
 </html>

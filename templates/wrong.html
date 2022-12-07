@@ -1,11 +1,24 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>correct</title>
+    <title>Xato!</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
 </head>
 <body>
-<h1>Javobingiz Xato</h1>
-<p>Sizni Darajangiz: {{ rank }}</p>
+<div class="container">
+    <div class="row mt-5">
+    <div class="col-4"></div>
+    <div class="col-4 mt-5 text-center">
+        <h1 class="text-center">Javobingiz Xato</h1>
+        <p class="fs-3 text-center">Sizni Darajangiz: {{ rank }}</p>
+        <a href="{% url 'base' %}" class="btn btn-outline-success">Bosh sahifa</a>
+        <a href="{% url 'score' %}" class="btn btn-outline-danger">Natijalar</a>
+    </div>
+
+    <div class="col-3"></div>
+    </div>
+</div>
 </body>
 </html>
